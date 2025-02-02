@@ -3,9 +3,9 @@ LICENSE = "GPLv2"
 LICENSE_PATH = "${S}"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 
-RDEPENDS_${PN} += "bash"
-RDEPENDS_${PN} += "python"
-RDEPENDS_${PN} += "spi-xfer"
+RDEPENDS:${PN} += "bash"
+RDEPENDS:${PN} += "python"
+RDEPENDS:${PN} += "spi-xfer"
 
 PR = "r1"
 

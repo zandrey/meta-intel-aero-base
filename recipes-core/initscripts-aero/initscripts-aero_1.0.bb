@@ -23,5 +23,5 @@ do_install () {
     install -D -m 0644 ${WORKDIR}/aero-wd.service ${D}${systemd_unitdir}/system
 }
 
-SYSTEMD_SERVICE_${PN} += "ds4.service"
-SYSTEMD_SERVICE_${PN} += "aero-wd.service"
+SYSTEMD_SERVICE:${PN} += "ds4.service"
+SYSTEMD_SERVICE:${PN} += "aero-wd.service"

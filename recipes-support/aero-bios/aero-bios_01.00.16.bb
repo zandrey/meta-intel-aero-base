@@ -7,9 +7,9 @@ SRC_URI = "file://BIOSUPDATE.fv \
 		file://LICENSE \
 	   "
 
-do_install_append() {
+do_install:append() {
 	install -d ${D}/etc/bios
 	install -m 0755 ${WORKDIR}/BIOSUPDATE.fv ${D}/etc/bios
 }
 
-FILES_${PN} += "/etc/bios/BIOSUPDATE.fv"
+FILES:${PN} += "/etc/bios/BIOSUPDATE.fv"

@@ -1,14 +1,15 @@
 # Intel Aero Machine kernel support
-KBRANCH_intel-aero ?= "standard/intel/base"
-SRCREV_machine_intel-aero ?= "ad0fe444fa68ae2cce203abceb71f6fb87bc6c7f"
-COMPATIBLE_MACHINE_intel-aero = "intel-aero"
-LINUX_VERSION_intel-aero = "4.4.113"
+KBRANCH:intel-aero ?= "standard/intel/base"
+SRCREV:machine_intel-aero ?= "ad0fe444fa68ae2cce203abceb71f6fb87bc6c7f"
+
+COMPATIBLE_MACHINE:intel-aero = "intel-aero"
+LINUX_VERSION:intel-aero = "4.4.113"
 
 KERNEL_EXTRA_FEATURES = ""
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 # module is not enabled, but brought in by meta-virtualization
-KERNEL_MODULE_AUTOLOAD_remove = "kvm-amd"
+KERNEL_MODULE_AUTOLOAD:remove = "kvm-amd"
 
 # List of configs to enable in kernel .config
 SRC_URI += "file://defconfig"
@@ -63,7 +64,7 @@ SRC_URI += " \
 	file://0052-workaround-for-wrong-ACPI-configuration-passed-for-mcp251x.patch \
 	"
 
-do_install_append() {
+do_install:append() {
 	install -d ${D}/lib/firmware
 	install -m 0777 ${WORKDIR}/shisp_2401a0_v21.bin ${D}/lib/firmware
 }
